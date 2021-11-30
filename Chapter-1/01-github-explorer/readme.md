@@ -1,3 +1,6 @@
+* cd Chapter-1/01-github-explorer
+
+
 * yarn init -y
 
 * yarn add react
@@ -30,3 +33,9 @@
 * yarn add node-sass
 
 * yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh - mantem estado dos componentes
+
+* yarn add typescript -D
+* yarn tsc --init
+* yarn add @babel/preset-typescript -D
+* yarn add @types/react-dom -D
+* yarn add @types/react -D

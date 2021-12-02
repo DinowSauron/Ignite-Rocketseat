@@ -1,5 +1,7 @@
-# Ignite Rocketseat
+# Ignite - Rocketseat <img src="./pictures/react.png" width="32px" style="float: right;">
  Curso De ReactJS
+
+ 
 
  iniciado em: 30/11/2021. <br/>
  terminado em: Ainda cursando... <br/>

@@ -16,3 +16,7 @@
 * yarn add polished - funções para modificar cores
 
 * intl - formatação nativa para valores
+
+// Typescript Omit<> Pick<>
+// arrays.reduce((acc, array) => { return acc = array.value}, initial state);
+//_middleware.ts

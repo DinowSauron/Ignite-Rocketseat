@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse} from "next"
 
-export default function GetUsers(req: NextApiRequest, res: NextApiResponse) {
+export default async function GetUsers(req: NextApiRequest, res: NextApiResponse) {
   //serverless (não roda 24hrs)
 
   const users = [

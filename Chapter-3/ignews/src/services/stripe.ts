@@ -1,4 +1,4 @@
-import Stripe from "stripe"
+import Stripe from "stripe" //stripe do backend
 
 export const stripe = new Stripe(
   process.env.STRIPE_API_KEY,
@@ -10,3 +10,4 @@ export const stripe = new Stripe(
     }
   }
 )
+// não enviar nenhuma informação desta para o front-end

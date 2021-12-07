@@ -17,6 +17,7 @@
 * Stripe.
 * JWT, Next Auth.
 * FaunaDB.
+* CMS - Content Management System.
  
 ## Desafios:
 
@@ -24,3 +25,19 @@
 
 * <h3><a href="https://github.com/Ignite-Desafios/Hook-Carrinho-De-Compras" target="_blank">Ir Para o Desafio 02 <strong>(Hook Carrinho De Compras)</strong></a></h3>
 
+## Notas:
+
+* JAMStack - Javascript Api Markup 
+
+* CMS (Headless):
+  * Gratuitos:
+    * Strapi
+    * Ghost (Blog)
+    * Keystone
+  * Pagos:
+    * GraphCMS
+    * Prismic CMS
+    * COntentful
+  * E-Comerce
+    * Shopify
+    * Saleor

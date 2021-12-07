@@ -1,8 +1,8 @@
 # IG.News
 
-* cd Chapter-3/ignews
+* cd Chapter-3/ignews x2
   * ``yarn dev``
-  * ``yarn stripe listen --forward-to localhost:3000/api/auth/webhooks``
+  * ``yarn stripe listen --forward-to localhost:3000/api/webhooks``
   * Copie o codigo do signin secret do webhook e coloque no .env.local
 
 
@@ -25,6 +25,8 @@
   STRIPE_CANCEL_URL=http://localhost:3000/
 
   WEBHOOK_SIGNIN_SECRET='yarn stripe code'
+  PRISMIC_ACCESS_TOKEN=
+  PRISMIC_ENTRY_POINT=https://PRISMIC_NAME/api/v2
 
   GITHUB_CLIENT_ID=
   GITHUB_CLIENT_SECRET=
@@ -53,7 +55,12 @@
 
 * yarn add axios
 
+* yarn add @prismicio/client prismic-reactjs next-slicezone
+* yarn add prismic-dom @types/prismic-dom - formata os dados para uma versão dom
+
+
 ### webhooks stripe:
+
 * Configure o endpoint no stripe `https://dashboard.stripe.com/test/webhooks`
 
 #### Developer (localhost)
@@ -66,3 +73,5 @@
   * yarn stripe -h
   * yarn stripe listen --forward-to localhost:3000/api/auth/webhooks -> deixe rodando durante as transações com cartão para disparar os eventos
   * 
+
+---

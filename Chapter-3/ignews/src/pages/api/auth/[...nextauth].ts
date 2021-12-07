@@ -30,6 +30,44 @@ export default NextAuth({
   secret: process.env.HASH_KEY,
 
   callbacks: {
+    async session({session}) {
+      try {
+        const userActiveSubscription = await fauna.query(
+          q.Get(
+            q.Intersection([
+              q.Match(
+                q.Index("subscription_by_user_ref"),
+                q.Select(
+                  "ref",
+                  q.Get(
+                    q.Match(
+                      q.Index("user_by_email"),
+                      q.Casefold(session.user.email)
+                    )
+                  )
+                )
+              ),
+              q.Match(
+                q.Index("subscription_by_status"),
+                "active"
+              )
+            ])
+          )
+        )
+
+        return {
+          ...session,
+          activeSubscription: userActiveSubscription
+        }
+      } catch(err) {
+        return {
+          ...session,
+          activeSubscription: null,
+          subscriptionError: err.message
+        }
+      }
+    },
+
     async signIn(params) {
       //console.log(params) //params.profile -> pega os dados da api do github
       const user = params.user

@@ -56,7 +56,8 @@ const options = {
   }
 }
 const series = [
-  {name: "series1", data: [31, 120, 10, 28, 51, 18, 109]}
+  {name: "Channel 1", data: [31, 120, 74, 7, 51, 37, 109]},
+  // {name: "Channel 2", data: [62, 42, 88, 64, 124, 18, 36]},
 ]
 
 export default function Dashboard() {
@@ -78,11 +79,11 @@ export default function Dashboard() {
         <Sidebar/>
 
         <SimpleGrid flex="1" gap="4" minChildWidth="320px" align="flex-start">
-          <Box p="8" pb="4"  bg="gray.800" borderRadius="8" >
+          <Box p={["6", "8"]} pb="4"  bg="gray.800" borderRadius="8" >
             <Text fontSize="lg" mb="4">Inscritos da semana</Text>
             <Chart options={options} series={series} type="area" height={180}/>
           </Box>
-          <Box p="8" bg="gray.800" borderRadius="8">
+          <Box p={["6", "8"]} bg="gray.800" borderRadius="8">
             <Text fontSize="lg" mb="4">Taxa de abertura</Text>
             <Chart options={options} series={series} type="area" height={180}/>
           </Box>

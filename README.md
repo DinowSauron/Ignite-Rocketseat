@@ -19,6 +19,7 @@
 * FaunaDB.
 * CMS - Content Management System.
 * Chakra UI - Interface declarativa.
+  * Responsividade
 * ApexCharts - Bíblioteca de graficos.
 
 ## Desafios:
@@ -31,10 +32,12 @@
 
 ## Notas:
 
+* Utilize o useRouter para mostrar paginas ativas!
+* passHref no nextlink caso não tiver um Anchor dentro
 * dynamic from 'next/dynamic' | dynamic(() => {}, {ssr: false}); 
   * utiliza uma função que não é executada na camada next, aceitando propiedados do browser, como o window, alert, etc...
 * JAMStack - Javascript Api Markup 
-* framer motion
+* Framer motion
 * CMS (Headless):
   * Gratuitos:
     * Strapi

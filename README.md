@@ -5,7 +5,7 @@
 
  iniciado em: 29/11/2021. <br/>
  terminado em: Ainda cursando... <br/>
- meta: Terminar dia: 22/12
+ meta: Terminar dia: 15/12
 ---
 
 ## Tecnologias Utilizadas:
@@ -16,6 +16,7 @@
 * NextJS.
 * Stripe.
 * JWT, Next Auth.
+* MirageJS.
 * FaunaDB.
 * CMS - Content Management System.
 * Chakra UI - Interface declarativa.
@@ -32,6 +33,8 @@
 
 ## Notas:
 
+* Partial&lt;Type&gt; -> type = a tipagem do typescript | com o Partial<> você pode passar um tipo porem não conter todos os campos.
+* React Hooks Forms (formulários)
 * Utilize o useRouter para mostrar paginas ativas!
 * passHref no nextlink caso não tiver um Anchor dentro
 * dynamic from 'next/dynamic' | dynamic(() => {}, {ssr: false}); 

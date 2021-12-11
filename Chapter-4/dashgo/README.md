@@ -16,7 +16,7 @@ Dashgo é um visualizador de graficos (dashboard)
 * yarn add faker -D -> dados ficticios
 * yarn add @types/faker -D
 * yarn add react-query -> data fetching (SWR - vercell)
-* 
+* yarn add axios
 
 
 

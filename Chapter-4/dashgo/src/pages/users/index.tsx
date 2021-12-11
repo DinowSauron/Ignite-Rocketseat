@@ -1,16 +1,17 @@
-import { Box, Button, Flex, Text, Heading, Icon, Table, Th, Thead, Tr, Tbody, Checkbox, Td, useBreakpointValue, Spinner } from "@chakra-ui/react"
-import React, { useEffect } from "react";
+import { Box, Button, Flex, Text, Heading, Icon, Table, Th, Thead, Link as ChakraLink, Tr, Tbody, Checkbox, Td, useBreakpointValue, Spinner } from "@chakra-ui/react"
+import React, { useEffect, useState } from "react";
+import Link from "next/link"
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import Sidebar from "../../components/Sidebar";
-import Link from "next/link";
-import { useQuery } from "react-query"
-import { Console } from "console";
-
+import { api } from "../../services/api";
+import { getUsers, useUsers } from "../../services/hooks/useUsers";
+import { queryClient } from "../../services/queryClient";
+import { GetStaticProps } from "next";
 
 type User = {
-  id: number;
+  id: string;
   name: string;
   email: string;
   created_at: string;
@@ -18,32 +19,28 @@ type User = {
 
 export default function UserList() {
 
-  const { data, isLoading, error } = useQuery("users", async () => {
-    const res = await fetch("http://localhost:3000/api/users");
-    const data = await res.json();
+  const [page, setPage] = useState(1);
+  // refetch > criar um botão de recarregar...
 
-    const users = data.users.map((user) => {
-      return {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        created_at: new Date(user.created_at).toLocaleDateString("pt-BR", {
-          day: "2-digit",
-          month: "long",
-          year: "numeric"
-        }),
-      }
-    })
+  const { data, isLoading, isFetching, refetch, error } = useUsers(page);
+  /* utilize a chave do react-query para utilizar o cache tbm!
+  useEffect(() => {refetch()}, [page])*/
 
-    return users;
-  }, {
-    staleTime: 1000 * 5 // 5sec sem recarregar
-  });
 
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true
-  })
+  });
+
+  async function handlePrefetchUser(userId: String) {
+    await queryClient.prefetchQuery(["user", userId], async () => {
+      const resp = await api.get(`users/${userId}`);
+
+      return resp.data;
+    }, {
+      staleTime: 1000 * 60 * 10 // 10 minutos
+    })
+  }
 
   return (
     <Box w="100vw">
@@ -54,7 +51,10 @@ export default function UserList() {
         
         <Box w={!isWideVersion ? "100%" : ""} flex="1" borderRadius="8" bg="gray.800" p="8">
           <Flex mb="8" justify="space-between" align="center">
-            <Heading size="lg" fontWeight="normal">Usuários</Heading>
+            <Heading size="lg" fontWeight="normal">
+              Usuários
+              {!isLoading && isFetching && <Spinner size="sm" color="gray.500" ml="4"/>}
+            </Heading>
 
             <Link href="/users/create" passHref>
               <Button
@@ -92,14 +92,17 @@ export default function UserList() {
                 </Thead>
                 <Tbody>
 
-                  {data.map((user: User) => (
+                  {data.users.map((user) => (
                     <Tr key={user.id}>
                       <Td px={[ "4","4", "6"]} >
                         <Checkbox colorScheme="blue"/>
                       </Td>
                       <Td>
                         <Box>
-                          <Text fontWeight="bold">{user.name}</Text>
+                          <ChakraLink color="purple.400" onMouseEnter={() => handlePrefetchUser(user.id)}>
+                            <Text fontWeight="bold">{user.name}</Text>
+                          </ChakraLink>
+                          
                           {isWideVersion && <Text fontSize="sm" color="gray.300">{user.email}</Text>}
                         </Box>
                       </Td>
@@ -123,7 +126,12 @@ export default function UserList() {
                 </Tbody>
               </Table>
 
-              <Pagination />
+              <Pagination
+                totalCountOfRegisters={data.totalCount}
+                currentPage={page}
+                registerPerPage={10}
+                onPageChange={setPage} 
+              />
             </>
           )}
 
@@ -132,3 +140,17 @@ export default function UserList() {
     </Box>
   );
 }
+
+
+// não precisa ser SSR 
+/*
+const getStaticProps: GetStaticProps = async () => {
+  const { users, totalCount } = await getUsers(1);
+
+  return {
+    props: {
+      users: users
+    }
+  }
+}
+*/

@@ -1,0 +1,37 @@
+.container{
+  --container-width: 500px;
+  --container-height: 250px;
+  position: absolute;
+  top: calc(50% - calc(var(--container-height) / 2));
+  left: calc(50% - calc(var(--container-width) / 2));
+  background-color: #1e49d4;
+  width: var(--container-width);
+  height: var(--container-height);
+  border-radius: 2rem;
+  border: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  input, button {
+    margin: 5px;
+    width: 25ch;
+    border: 2px solid #fff;
+    background: transparent;
+    padding: .2rem 1ch;
+    border-radius: .7rem;
+    transition: .2s;
+    font-size: 1.5rem;
+    color: #fff;
+
+    &:hover {
+      background: #0005;
+    }
+  }
+
+  button:hover {
+    letter-spacing: .2rem;
+  }
+
+}

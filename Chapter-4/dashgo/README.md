@@ -3,6 +3,15 @@ Dashgo é um visualizador de graficos (dashboard)
 
 ## Comandos utilizados:
 
+#### Inicializar:
+
+* cd Chapter-4/dashgo  (FrontEnd)
+* yarn dev -> localhost:3000
+
+
+
+#### Comandos:
+
 * yarn create next-app dashgo
 * cd Chapter-4/dashgo
 * yarn add typescript @types/react @types/react-dom @types/node -D
@@ -31,3 +40,9 @@ Dashgo é um visualizador de graficos (dashboard)
 * Nem tudo que se faz no css se faz no chakra.
 * Nunca tente usar para formatar tabelas, nunca.
 * Perfeito para aplicações simples que não necessita de um estilo complexo, nem alinhamento preciso.
+
+```
+!! BACKEND NÃO UTILIZADO !!
+cd Chapter-4/backend-auth  (BackEnd)
+yarn dev -> localhost:3333
+```

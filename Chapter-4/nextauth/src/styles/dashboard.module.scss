@@ -1,0 +1,48 @@
+.container{
+  --container-width: 500px;
+  --container-height: 250px;
+  position: absolute;
+  top: calc(50% - calc(var(--container-height) / 2));
+  left: calc(50% - calc(var(--container-width) / 2));
+  background-color: #1e49d4;
+  width: var(--container-width);
+  height: var(--container-height);
+  border-radius: 2rem;
+  border: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  a {
+    padding: 2px .6rem;
+    border-radius: 50rem;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: .2s;
+    &.backButton {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    &:hover {
+      background: #0005;
+    }
+  }
+
+  span {
+    margin: 5px;
+  }
+  p {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    margin: 1px;
+  }
+
+}

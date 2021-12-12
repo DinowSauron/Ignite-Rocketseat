@@ -8,7 +8,7 @@ import Sidebar from "../../components/Sidebar";
 import { api } from "../../services/api";
 import { getUsers, useUsers } from "../../services/hooks/useUsers";
 import { queryClient } from "../../services/queryClient";
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 
 type User = {
   id: string;
@@ -16,6 +16,9 @@ type User = {
   email: string;
   created_at: string;
 }
+type UserListProps = {
+}
+
 
 export default function UserList() {
 
@@ -142,15 +145,10 @@ export default function UserList() {
 }
 
 
-// não precisa ser SSR 
-/*
-const getStaticProps: GetStaticProps = async () => {
-  const { users, totalCount } = await getUsers(1);
+
+export const getStaticProps: GetStaticProps = async () => {
 
   return {
-    props: {
-      users: users
-    }
+    props: {}
   }
 }
-*/

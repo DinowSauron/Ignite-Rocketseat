@@ -20,6 +20,7 @@ export async function getUsers(page: number): Promise<GetUsersResponse> {
       page,
     }
   });
+  
 
   const totalCount = Number(headers["x-total-count"])
 
@@ -40,8 +41,10 @@ export async function getUsers(page: number): Promise<GetUsersResponse> {
 }
 
 
-export function useUsers(page: number) {
+export function useUsers(page: number, options?: {initialData: GetUsersResponse}) {
+
   return useQuery(["users", page], () => getUsers(page), {
     staleTime: 1000 * 60 * 10, // 10 min sem recarregar (milisecods)
+    ...options
   });
 }

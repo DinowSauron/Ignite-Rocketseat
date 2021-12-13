@@ -26,3 +26,4 @@ o contexto dessa aula foi introduzir o processo de autenticação no front-end.
 ## Notas: 
 
 * sempre que mudar algo no servidor todas as alterações serão perdidas, pois não há banco de dados.
+* BroadcastChannel

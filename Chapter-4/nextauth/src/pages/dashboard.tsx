@@ -3,14 +3,14 @@ import { useEffect } from "react";
 import { Can } from "../components/Can";
 import { setupApiClient } from "../services/api";
 import { api } from "../services/apiClient";
-import { signOut, useAuth } from "../services/contexts/AuthContext"
+import { useAuth } from "../services/contexts/AuthContext"
 import styles from "../styles/dashboard.module.scss"
 import { withSSRAuth } from "../utils/withSSRAuth";
 
 
 export default function Dashboard() {
 
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
 
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function Dashboard() {
         </>
       )}
 
-      <button onClick={signOut} className={styles.backButton}>Return</button>
+      <button onClick={signOut} className={styles.backButton}>Sign Out</button>
       
     </div>
   )

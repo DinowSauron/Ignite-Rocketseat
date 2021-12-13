@@ -1,10 +1,11 @@
 import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { createContext, ReactNode } from "react";
-import { api } from "../api";
+import { api } from "../apiClient";
 import Router from "next/router";
 import { parseCookies, destroyCookie } from "nookies";
-import { setCookiesWithToken } from "../setCookies";
+import { setCookiesWithToken } from "../../utils/setCookies";
+import { AuthTokenError } from "../errors/AuthTokenError";
 
 type User = {
   email: string;
@@ -28,12 +29,12 @@ type AuthProviderProps = {
 }
 
 export function signOut() {
-  destroyCookie(undefined, "nextauth.token");
-  destroyCookie(undefined, "nextauth.refreshToken");
-
+    destroyCookie(undefined, "nextauth.token");
+    destroyCookie(undefined, "nextauth.refreshToken");
+    Router.push("/");
 }
 
-const AuthContext = createContext({} as AuthContextData);
+export const AuthContext = createContext({} as AuthContextData);
 
 export function AuthProvider({children}: AuthProviderProps) {
   const [user, setUser] = useState<User>();
@@ -65,6 +66,7 @@ export function AuthProvider({children}: AuthProviderProps) {
       });
 
       const { permissions, roles, token, refreshToken } = response.data;
+
       // sessionStorage -> se fechar e abrir perde os dados
       // localstorage -> fica guardado localmente (backend não tem acesso)
       // cookies -> fica guardado localmente (backend pode acessar os cookies facilmente)

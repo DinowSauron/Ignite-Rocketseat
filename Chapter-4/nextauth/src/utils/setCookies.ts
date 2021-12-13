@@ -1,16 +1,17 @@
 import { setCookie } from "nookies";
-import { api } from "./api";
+import { api } from "../services/apiClient";
 
 
 export function setCookiesWithToken(token, refreshToken = undefined) {
+
   setCookie(undefined, "nextauth.token", token, {
     maxAge: 60 * 60 * 2, // coloque um valor bem grande (tipo 30 dias)
-    path: "/", // quem vai ter acesso ao cookie
+    path: "/", // caminhos que terão acesso ao cookie
   });
   if(refreshToken) {
     setCookie(undefined, "nextauth.refreshToken", refreshToken, {
-      maxAge: 60 * 60 * 2, // coloque um valor bem grande (tipo 30 dias)
-      path: "/", // quem vai ter acesso ao cookie
+      maxAge: 60 * 60 * 2, 
+      path: "/",
     });
   }
   

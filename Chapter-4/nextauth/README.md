@@ -20,7 +20,7 @@ o contexto dessa aula foi introduzir o processo de autenticação no front-end.
 * yarn add sass
 * yarn add axios
 * yarn add nookies -> next cookies (não é obrigatorio utilizar em todo projeto com cookie)
-* 
+* yarn add jwt-decode
 
 
 ## Notas: 

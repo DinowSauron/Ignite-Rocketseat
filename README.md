@@ -31,6 +31,8 @@
 
 * <h3><a href="https://github.com/Ignite-Desafios/Zero-Project" target="_blank">Ir Para o Desafio 03 <strong>(Criando uma aplicação do zero)</strong></a></h3>
 
+* <h3><a href="https://github.com/Ignite-Desafios/Upload-Images" target="_blank">Ir Para o Desafio 04 <strong>(Upload de imagens)</strong></a></h3>
+
 ## Notas:
 
 * Partial&lt;Type&gt; -> type = a tipagem do typescript | com o Partial<> você pode passar um tipo porem não conter todos os campos.

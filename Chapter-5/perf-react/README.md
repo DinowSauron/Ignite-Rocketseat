@@ -20,7 +20,22 @@
   1. Memoriza uma função e não seu retorno
   2. util quando passado de pai para filho ou em contextos
 
+* Code Spliting (Dynamic Import)
+  * Lazy laod -> so carrega quando é exibido em tela
+  * So carrega o componente e seus codigos quando o componente aparece em tela
+  * Também funciona para funções, Importando diretamente na função, com async await
+
+* Virtualized
+  * Exibe o html que está em tela
+
+* Bundle analyzer
+  * verificador de budle
+
 ### Comandos:
 
 * cd Chapter-5/perf-react
-* 
+* yarn dev / yarn server
+
+
+### Testes:
+Feito no ignews

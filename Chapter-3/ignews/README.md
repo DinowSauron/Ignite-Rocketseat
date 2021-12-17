@@ -35,6 +35,7 @@
 
   HASH_KEY='any string -> md5 hask key recomended'
   NEXTAUTH_URL=http://localhost:3000/api/auth/
+  DISABLE_MOCKED_WARNING=true
   ```
 
 
@@ -75,3 +76,17 @@
   * 
 
 ---
+
+
+## Chapter 5 - Testes unitários:
+
+### Comandos adicionais:
+
+* cd Chapter-3/ignews   - x2
+  * ``yarn dev``
+  * ``yarn stripe listen --forward-to localhost:3000/api/webhooks``
+* yarn add jest @testing-library/jest-dom @testing-library/jest-dom @testing-library/react babel-jest -D 
+* yarn add ts-jest -D
+* yarn jest
+
+* yarn add identity-obj-proxy -D -> arquivos de estilos 'next'

@@ -4,11 +4,12 @@ import { GetStaticProps } from "next"
 import { SubscribeButton } from "../components/SubscribeButton"
 import styles from "../styles/home.module.scss"
 import { stripe } from "../services/stripe"
+import { SessionProvider } from "next-auth/react"
 
 type HomeProps = {
   product: {
     priceId: string;
-    amount: number;
+    amount: string;
   }
 }
 
@@ -19,7 +20,6 @@ export default function Home({product}: HomeProps) {
         <title>ig.news | Home</title>
       </Head>
       
-      
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
           <span>👏 Hey, welcome</span>
@@ -28,7 +28,7 @@ export default function Home({product}: HomeProps) {
             Get access to all the publications <br/>
             <span>for {product.amount} month</span>
           </p>
-          <SubscribeButton priceId={product.priceId}/>
+          <SubscribeButton/>
         </section>
 
         <img src="./images/avatar.svg" alt="girl coding" />

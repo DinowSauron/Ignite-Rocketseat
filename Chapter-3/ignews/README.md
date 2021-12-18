@@ -82,9 +82,10 @@
 
 ### Comandos adicionais:
 
-* cd Chapter-3/ignews   - x2
+* cd Chapter-3/ignews   - x3
   * ``yarn dev``
   * ``yarn stripe listen --forward-to localhost:3000/api/webhooks``
+  * ``yarn jest``
 * yarn add jest @testing-library/jest-dom @testing-library/jest-dom @testing-library/react babel-jest -D 
 * yarn add ts-jest -D
 * yarn jest

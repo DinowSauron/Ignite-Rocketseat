@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async () => {
     fetch: ["title", "content"],
     pageSize: 100,
   });
-
+  
   const posts = response.results.map(post => {
     return {
       slug: post.uid,
@@ -68,8 +68,8 @@ export const getStaticProps: GetStaticProps = async () => {
       })
     }
   })
-
-  // console.log(JSON.stringify(response, null, 2)) logar com objetos ocultos
+  
+  //console.log(JSON.stringify(response, null, 2))// logar com objetos ocultos
 
   return {
     props: {posts}

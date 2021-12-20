@@ -1,11 +1,15 @@
 # Ignite - Rocketseat <img src="./pictures/react.png" width="32px" style="float: right;">
+
  Curso De ReactJS
 
- 
 
  iniciado em: 29/11/2021. <br/>
- terminado em: Ainda cursando... <br/>
- meta: Terminar dia: 15/12
+ terminado em: 20/12/2021 <br/>
+
+---
+
+<img src="./pictures/Certificado Ignite - Black.png" alt="Certificado ReactJS - Rocketseat" width="100%"/>
+
 ---
 
 ## Tecnologias Utilizadas:
@@ -22,6 +26,8 @@
 * Chakra UI - Interface declarativa.
   * Responsividade
 * ApexCharts - Bíblioteca de graficos.
+* Jest - testes automatizados
+
 
 ## Desafios:
 
@@ -32,6 +38,7 @@
 * <h3><a href="https://github.com/Ignite-Desafios/Zero-Project" target="_blank">Ir Para o Desafio 03 <strong>(Criando uma aplicação do zero)</strong></a></h3>
 
 * <h3><a href="https://github.com/Ignite-Desafios/Upload-Images" target="_blank">Ir Para o Desafio 04 <strong>(Upload de imagens)</strong></a></h3>
+
 
 ## Notas:
 
@@ -55,3 +62,7 @@
   * E-Comerce
     * Shopify
     * Saleor
+* Deploy:
+  * Vercel
+  * Netlify
+  

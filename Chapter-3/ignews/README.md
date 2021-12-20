@@ -91,3 +91,11 @@
 * yarn jest
 
 * yarn add identity-obj-proxy -D -> arquivos de estilos 'next'
+
+
+---
+
+### Debugs:
+
+* screen.logTestingPlaygroundURL(); 
+* Coverage report

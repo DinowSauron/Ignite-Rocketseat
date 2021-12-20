@@ -34,6 +34,7 @@ describe("Post page", () => {
 
     const response = await getServerSideProps({params: {slug: "my-new-post"}} as any)
 
+    screen.logTestingPlaygroundURL(); // melhor log de todos
 
     expect(response).toEqual(
       expect.objectContaining({ 

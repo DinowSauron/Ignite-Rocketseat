@@ -7,7 +7,7 @@ Dashgo é um visualizador de graficos (dashboard)
 
 * cd Chapter-4/dashgo  (FrontEnd)
 * yarn dev -> localhost:3000
-
+* Entre em ``/dashboard`` > sistema de login não utilizado!
 
 
 #### Comandos:

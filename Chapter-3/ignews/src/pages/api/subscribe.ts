@@ -23,7 +23,7 @@ export default async function GetUsers(req: NextApiRequest, res: NextApiResponse
       req
     });
 
-    const user = await fauna.query<User>(
+    const user = await fauna.query<User>( // pegar o usuario do db
       q.Get(
         q.Match(
           q.Index("user_by_email"),

@@ -1,22 +1,23 @@
 # IG.News
 
-* cd Chapter-3/ignews x2
+* ``cd Chapter-3/ignews`` x2
   * ``yarn dev``
-  * ``yarn stripe listen --forward-to localhost:3000/api/webhooks``
   * Copie o codigo do signin secret do webhook e coloque no .env.local
+  * ``yarn stripe listen --forward-to localhost:3000/api/webhooks``
 
 
 
-* yarn create next-app 'name'
+* ``yarn create next-app 'name'``
 
-* yarn add typescript @types/react @types/node -D
+* ``yarn add typescript @types/react @types/node -D``
 
-* yarn add sass
+* ``yarn add sass``
 
-* yarn add react-icons
+* ``yarn add react-icons``
 
-* yarn add stripe - backend
-* yarn add @stripe/stripe-js - front-end
+
+* ``yarn add stripe`` - backend
+* ``yarn add @stripe/stripe-js`` - front-end
 * .env.local 
   ```
   STRIPE_API_KEY=
@@ -49,15 +50,15 @@
   * Conteudos (SSG)
   * Comentários (Client-side)
 
-* yarn add next-auth
-* yarn add @types/next-auth
+* ``yarn add next-auth``
+* ``yarn add @types/next-auth``
 
-* yarn add faunadb - configure o banco no site do faunadb
+* ``yarn add faunadb`` - configure o banco no site do faunadb
 
-* yarn add axios
+* ``yarn add axios``
 
-* yarn add @prismicio/client prismic-reactjs next-slicezone
-* yarn add prismic-dom @types/prismic-dom - formata os dados para uma versão dom
+* ``yarn add @prismicio/client prismic-reactjs next-slicezone``
+* ``yarn add prismic-dom @types/prismic-dom`` - formata os dados para uma versão dom
 
 
 ### webhooks stripe:
